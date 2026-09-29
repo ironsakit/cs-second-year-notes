@@ -40,7 +40,7 @@ char *add_str(char *str1, char *str2)
 int main(void)
 {
     char *n1 = strdup("0"), *n2 = strdup("1");  // alloco dinamicamente le due stringhe perchè non potrei fare free su due memorie di sola lettura
-    int fib = 1000;
+    int fib = 100000;
 
     for (int i = 2; i <= fib; i++)
     {
@@ -48,7 +48,7 @@ int main(void)
         free(n1);
         n1 = n2;
         n2 = n3;
-        if (i == fib) printf("%d) %s\n", i, n3);
+        if (i == fib) printf("%d) %s\n\n%zu", i, n3, strlen(n3));
     }
 
     free(n1);
